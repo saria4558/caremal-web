@@ -1,28 +1,25 @@
 <?php
-
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class Masyarakat extends Authenticatable
 {
     use HasFactory;
 
-    protected $table = 'users';
+    protected $table = 'masyarakats';
 
     protected $guarded = ['id'];
 
     protected $hidden = [
-        'password',
+        'masy_password',
     ];
 
     // Pastikan password selalu ter-hash
     public function setPasswordAttribute($value)
     {
-        $this->attributes['password'] = Hash::make($value);
+        $this->attributes['masy_password'] = Hash::make($value);
     }
 }

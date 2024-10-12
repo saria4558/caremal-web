@@ -76,3 +76,7 @@ Route::get('/deletedata/{id}', [CaremalController::class, 'deletedata'] )->name(
 Route::get('/deletedatakontak/{id}', [CaremalController::class, 'deletedatakontak'] )->name('deletedatakontak');
 Route::put('/updatedata/{id}', [CaremalController::class, 'updatedata'])->name('updatedata');
 Route::get('/tampilkandata/{id}', [CaremalController::class, 'tampilkandata'])->name('tampilkandata');
+
+
+// Dokter
+Route::get('/dokter/home', [CaremalController::class, 'dokter'] )->name('event');
