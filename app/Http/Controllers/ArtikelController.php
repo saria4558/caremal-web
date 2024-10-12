@@ -2,13 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ArtikelPublic;
 use Illuminate\Http\Request;
 
-class ArtikelController extends Controller
+class ArtikelPublicController extends Controller
 {
-    public function index()
+    public function artikel()
     {
-        return view('artikel');
+        $data = ArtikelPublic::all();
+        return view('ArtikelPublic', compact('data'));
+
+        dd($data);
+    
     }
-        
+
 }
+
+
