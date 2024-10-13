@@ -12,7 +12,7 @@ class ArtikelController extends Controller
         $data = ArtikelPublic::all();
         return view('ArtikelPublic', compact('data'));
 
-        dd($data);
+        // dd($data);
     
     }
 

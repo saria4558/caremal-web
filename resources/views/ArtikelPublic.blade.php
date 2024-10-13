@@ -328,7 +328,7 @@
     <!-- Artikel -->
     <div class="sidebar-item" id="artikel">
         <div class="rectangle">
-        <a href="{{ route('DashboardAdmin') }}"><img src="assets/img/icon artikel.png" alt="Artikel Icon"></a>
+        <a href="#"><img src="assets/img/icon artikel.png" alt="Artikel Icon"></a>
         </div>
         <div class="description">Artikel: Baca berbagai artikel.</div>
     </div>
@@ -507,60 +507,17 @@ function toggleDescription(id) {
 
     <!-- Artikel List -->
 <div class="artikel-list">
-    <!-- Artikel 1 -->
     <div class="artikel-item">
-        <img src="assets/img/image 1.png" alt="Artikel 1 Image">
+        @foreach ($data as $row)
+        <img src={{$row->artikel_image}} alt="Artikel 1 Image">
         <div class="artikel-info">
-            <div class="artikel-title">8 Obat Batuk Pilek Dewasa yang Paling Ampuh</div>
-            <div class="artikel-description">Obat batuk pilek dewasa bisa digunakan sebagai solusi untuk mengatasi batuk, bersin-bersin, hidung meler, dan hidung mampet. Obat ini bisa meredakan gejala dan membantu proses penyembuhan sehingga aktivitas tidak terganggu.<a href="{{ route('BacaSelengkapnya') }}"><i class class="read-more"></i>Baca selengkapnya</a></div>
-            
+            <div class="artikel-title">{{$row->artikel_judul}}</div>
+            <div class="artikel-description">{{$row->artikel_deskripsi}}<a href="{{ route('BacaSelengkapnya') }}"><i class class="read-more"></i>Baca selengkapnya</a></div>
+            @endforeach
         </div>
+       
     </div>
 
-    <!-- Artikel 2 -->
-    <div class="artikel-item">
-        <img src="assets/img/image 1.png" alt="Artikel 2 Image">
-        <div class="artikel-info">
-            <div class="artikel-title">8 Obat Batuk Pilek Dewasa yang Paling Ampuh</div>
-            <div class="artikel-description">Obat batuk pilek dewasa bisa digunakan sebagai solusi untuk mengatasi batuk, bersin-bersin, hidung meler, dan hidung mampet. Obat ini bisa meredakan gejala dan membantu proses penyembuhan sehingga aktivitas tidak terganggu.<a href="#" class="read-more">Baca selengkapnya</a></div>
-        </div>
-    </div>
-
-    <!-- Artikel 3 -->
-    <div class="artikel-item">
-        <img src="assets/img/image 1.png" alt="Artikel 3 Image">
-        <div class="artikel-info">
-            <div class="artikel-title">8 Obat Batuk Pilek Dewasa yang Paling Ampuh</div>
-            <div class="artikel-description">Obat batuk pilek dewasa bisa digunakan sebagai solusi untuk mengatasi batuk, bersin-bersin, hidung meler, dan hidung mampet. Obat ini bisa meredakan gejala dan membantu proses penyembuhan sehingga aktivitas tidak terganggu.<a href="#" class="read-more">Baca selengkapnya</a>.</div>
-        </div>
-    </div>
-
-    <!-- Artikel 4 -->
-    <div class="artikel-item">
-        <img src="assets/img/image 1.png" alt="Artikel 4 Image">
-        <div class="artikel-info">
-            <div class="artikel-title">8 Obat Batuk Pilek Dewasa yang Paling Ampuh</div>
-            <div class="artikel-description">Obat batuk pilek dewasa bisa digunakan sebagai solusi untuk mengatasi batuk, bersin-bersin, hidung meler, dan hidung mampet. Obat ini bisa meredakan gejala dan membantu proses penyembuhan sehingga aktivitas tidak terganggu.<a href="#" class="read-more">Baca selengkapnya</a></div>
-        </div>
-    </div>
-
-    <!-- Artikel 5 -->
-    <div class="artikel-item">
-        <img src="assets/img/image 1.png" alt="Artikel 5 Image">
-        <div class="artikel-info">
-            <div class="artikel-title">8 Obat Batuk Pilek Dewasa yang Paling Ampuh</div>
-            <div class="artikel-description">Obat batuk pilek dewasa bisa digunakan sebagai solusi untuk mengatasi batuk, bersin-bersin, hidung meler, dan hidung mampet. Obat ini bisa meredakan gejala dan membantu proses penyembuhan sehingga aktivitas tidak terganggu.<a href="#" class="read-more">Baca selengkapnya</a></div>
-        </div>
-    </div>
-
-    <!-- Artikel 6 -->
-    <div class="artikel-item">
-        <img src="assets/img/image 1.png" alt="Artikel 6 Image">
-        <div class="artikel-info">
-            <div class="artikel-title">8 Obat Batuk Pilek Dewasa yang Paling Ampuh</div>
-            <div class="artikel-description">Obat batuk pilek dewasa bisa digunakan sebagai solusi untuk mengatasi batuk, bersin-bersin, hidung meler, dan hidung mampet. Obat ini bisa meredakan gejala dan membantu proses penyembuhan sehingga aktivitas tidak terganggu.<a href="#" class="read-more">Baca selengkapnya</a></div>
-        </div>
-    </div>
 </div>
 
 
@@ -620,19 +577,3 @@ function toggleDescription(id) {
 </footer>
 
 </body>
-
-<!--</html>
-<header id="header" class="header d-flex flex-column justify-content-center">
-    
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="#artikel" ><i class="bi bi-newspaper"></i><span>Artikel</span></a></li>
-        <li><a href="/admin/daftarkontak" ><i class="bi bi-telephone"></i><span>Kontak Darurat</span></a></li>
-        <li><a href="/admin/daftardoktor"class="active"><i class="fa fa-user-md"></i><span>Doktor Hewan</span></a></li>
-        <li><a href="/admin/daftarpuskeswan" ><i class="bi bi-hospital"></i><span>Puskeswan</span></a></li>
-        
-      </ul>
-    </nav>
-
-  </header>-->

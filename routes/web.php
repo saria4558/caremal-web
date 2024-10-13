@@ -16,7 +16,7 @@ use App\Http\Controllers\MasyarakatController;
 Route::get('/', function () {
     return view('landing');
 });
-Route::get('/artikel', [ArtikelController::class, 'index'])->name('artikel');
+Route::get('/artikel', [ArtikelController::class, 'artikel'])->name('artikel');
 Route::get('/BacaSelengkapnya', [BacaController::class, 'index'])->name('BacaSelengkapnya');
 
 
@@ -60,21 +60,19 @@ Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard'
 // // Route untuk logout
 // Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
+
+// admin
 Route::get('/admin/daftarkontak', function () {
     return view('admin/daftarkontak');
 });
 Route::get('/admin/daftarpuskeswan', function () {
     return view('admin/daftarpuskeswan');
 });
-
 Route::get('/admin/daftardoktor', [CaremalController::class, 'dokter'] )->name('event');
 Route::get('/admin/daftarkontak', [CaremalController::class, 'shelter'] )->name('event');
 Route::get('/tambah', [CaremalController::class, 'tambah'] )->name('tambah');
 Route::post('/insert', [CaremalController::class, 'insert'] )->name('insert');
 Route::post('/insertkontak', [CaremalController::class, 'insertkontak'] )->name('insertkontak');
-// Route::get('/tampilkandata/{id}', [CaremalController::class, 'tampilkandata'])->name('tampilkandata');
-// Route::post('/updatedata/{id}', [CaremalController::class, 'updatedata'])->name('updatedata');
-// Route::put('/updatedata/{id}', [CaremalController::class, 'updatedata'])->name('updatedata');
 Route::get('/deletedata/{id}', [CaremalController::class, 'deletedata'] )->name('deletedata');
 Route::get('/deletedatakontak/{id}', [CaremalController::class, 'deletedatakontak'] )->name('deletedatakontak');
 Route::put('/updatedata/{id}', [CaremalController::class, 'updatedata'])->name('updatedata');
