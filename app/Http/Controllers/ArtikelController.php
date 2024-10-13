@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ArtikelPublic;
 use Illuminate\Http\Request;
 
-class ArtikelPublicController extends Controller
+class ArtikelController extends Controller
 {
     public function artikel()
     {

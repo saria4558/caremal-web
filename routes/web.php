@@ -7,6 +7,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\BacaController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DokterController;
+
 
 
 //artikel and landig page
@@ -79,4 +81,5 @@ Route::get('/tampilkandata/{id}', [CaremalController::class, 'tampilkandata'])->
 
 
 // Dokter
-Route::get('/dokter/home', [CaremalController::class, 'dokter'] )->name('event');
+
+Route::get('/dokter/home', [DokterController::class, 'index'])->name('dokterhome');
