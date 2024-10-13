@@ -83,3 +83,6 @@ Route::get('/tampilkandata/{id}', [CaremalController::class, 'tampilkandata'])->
 // Dokter
 
 Route::get('/dokter/home', [DokterController::class, 'index'])->name('dokterhome');
+Route::get('/dokter/artikel', [DokterController::class, 'artikel'])->name('dokterartikel');
+Route::get('/dokter/daftarpuskeswan', [DokterController::class, 'puskeswan'])->name('pukeswan');
+Route::get('/dokter/chat', [DokterController::class, 'chat'])->name('chat');

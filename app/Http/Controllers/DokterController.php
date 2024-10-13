@@ -14,6 +14,19 @@ class DokterController extends Controller
     {
         return view('/dokter/home');
     }
+    public function artikel()
+    {
+        return view('/dokter/artikel');
+    }
+    public function puskeswan()
+    {
+        return view('/dokter/daftarpuskeswan');
+    }
+
+    public function chat()
+    {
+        return view('/dokter/chat');
+    }
 
     /**
      * Store a newly created resource in storage.
