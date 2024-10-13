@@ -8,6 +8,7 @@ use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\BacaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DokterController;
+use App\Http\Controllers\MasyarakatController;
 
 
 
@@ -81,8 +82,14 @@ Route::get('/tampilkandata/{id}', [CaremalController::class, 'tampilkandata'])->
 
 
 // Dokter
-
 Route::get('/dokter/home', [DokterController::class, 'index'])->name('dokterhome');
 Route::get('/dokter/artikel', [DokterController::class, 'artikel'])->name('dokterartikel');
 Route::get('/dokter/daftarpuskeswan', [DokterController::class, 'puskeswan'])->name('pukeswan');
 Route::get('/dokter/chat', [DokterController::class, 'chat'])->name('chat');
+
+
+//Masyarakat
+Route::get('/masyarakat/home', [MasyarakatController::class, 'index'])->name('masyarakatrhome');
+Route::get('/masyarakat/artikel', [MasyarakatController::class, 'artikel'])->name('masyarakatartikel');
+Route::get('/masyarakat/daftarpuskeswan', [MasyarakatController::class, 'puskeswan'])->name('puskeswan');
+Route::get('/masyarakat/chat', [MasyarakatController::class, 'chat'])->name('chat');
