@@ -22,16 +22,16 @@ class user extends Seeder
         //     $table->rememberToken();
         //     $table->timestamps();
         // });
-        // DB::table('users')->insert([
-        //     'name'=>'upin',
-        //     'telepon' =>'085463526536',
-        //     'password'=>'1234'
-        // ]);
-
         DB::table('users')->insert([
-            'name'=>'ayu',
-            'telepon' =>'085335421511',
+            'name'=>'ipin',
+            'telepon' =>'085234123255',
             'password'=>'1234567890'
         ]);
+
+        // DB::table('users')->insert([
+        //     'name'=>'ayu',
+        //     'telepon' =>'085335421511',
+        //     'password'=>'1234567890'
+        // ]);
     }
 }
