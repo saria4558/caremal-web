@@ -12,8 +12,12 @@ class ArtikelController extends Controller
         $data = ArtikelPublic::all();
         return view('ArtikelPublic', compact('data'));
 
+
         // dd($data);
     
+    }
+    public function tambah(){
+        return view('admin/artikel');
     }
 
 }

@@ -40,25 +40,10 @@ Route::post('/register/complete', [RegisterController::class, 'handleSecondForm'
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login-proses', [LoginController::class, 'login_proses'])->name('login-proses');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-
 Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
 
 
-// Route untuk login
-// Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-// Route::post('/login-proses', [LoginController::class, 'login'])->name('login-proses');
 
-// // Route untuk menampilkan halaman register
-// Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-
-// // Route untuk menerima data dari form pertama (data umum user)
-// Route::post('/register', [RegisterController::class, 'register'])->name('register.first');
-
-// // Route untuk menerima data dari form kedua (username & password)
-// Route::post('/register/complete', [RegisterController::class, 'completeRegistration'])->name('register.complete');
-
-// // Route untuk logout
-// Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 // admin
@@ -68,7 +53,7 @@ Route::get('/admin/daftarkontak', function () {
 Route::get('/admin/daftarpuskeswan', function () {
     return view('admin/daftarpuskeswan');
 });
-Route::get('/admin/daftardoktor', [CaremalController::class, 'dokter'] )->name('event');
+Route::get('/admin/daftardoktor', [CaremalController::class, 'dokter'] )->name('daftardokter');
 Route::get('/admin/daftarkontak', [CaremalController::class, 'shelter'] )->name('event');
 Route::get('/tambah', [CaremalController::class, 'tambah'] )->name('tambah');
 Route::post('/insert', [CaremalController::class, 'insert'] )->name('insert');
@@ -77,6 +62,7 @@ Route::get('/deletedata/{id}', [CaremalController::class, 'deletedata'] )->name(
 Route::get('/deletedatakontak/{id}', [CaremalController::class, 'deletedatakontak'] )->name('deletedatakontak');
 Route::put('/updatedata/{id}', [CaremalController::class, 'updatedata'])->name('updatedata');
 Route::get('/tampilkandata/{id}', [CaremalController::class, 'tampilkandata'])->name('tampilkandata');
+Route::get('/admin/artikel', [ArtikelController::class, 'tambah'])->name('tambah');
 
 
 // Dokter

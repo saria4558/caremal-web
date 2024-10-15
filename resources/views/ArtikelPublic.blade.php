@@ -515,7 +515,6 @@ function toggleDescription(id) {
             <div class="artikel-description">{{$row->artikel_deskripsi}}<a href="{{ route('BacaSelengkapnya') }}"><i class class="read-more"></i>Baca selengkapnya</a></div>
             @endforeach
         </div>
-       
     </div>
 
 </div>
