@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Masyarakat;
 use App\Models\tb_Admin;
 use App\Models\tb_dokter;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -27,10 +28,10 @@ class LoginController extends Controller
         $password = $request->input('masy_password');
 
         // Cek di tabel Admin
-        $user = tb_Admin::where('admin_telepon', $telepon)->first();
-        if ($user && Hash::check($password, $user->admin_password)) {
+        $user = User::where('telepon', $telepon)->first();
+        if ($user && Hash::check($password, $user->password)) {
             Auth::login($user);
-            $request->session()->put('admin_nama', $user->admin_nama);
+            $request->session()->put('name', $user->name);
             return redirect()->to('/admin/artikel')->with('success', 'Login berhasil sebagai Admin!');
         }
 

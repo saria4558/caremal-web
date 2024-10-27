@@ -81,12 +81,11 @@
     <div class="navbar-left">
       <img src="{{ asset('assets/img/logo.png') }}" alt="CaremaL Logo" class="logo">
         {{-- <span class="brand-name">CaremaL</span> --}}
-    </div>
-    <div class="navbar-right">
-        <img src="{{ asset('assets/img/hero-bg.jpg') }}" alt="profil" class="profil">
-          <span class="user-greeting">Hi, {{ session('admin_nama') }}</span>
-          <a href="#" class="language-switch">EN</a>
-      </div>
+        <div class="navbar-right">
+            <img src="{{ asset('assets/img/hero-bg.jpg') }}" alt="profil" class="profil">
+              <span class="user-greeting">Hi, {{ session('name') }}</span>
+              <a href="#" class="language-switch">EN</a>
+          </div>
 </nav>
 <header id="header" class="header d-flex flex-column justify-content-center">
     <i class="header-toggle d-xl-none bi bi-list"></i>

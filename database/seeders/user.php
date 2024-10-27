@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class user extends Seeder
 {
@@ -22,10 +23,15 @@ class user extends Seeder
         //     $table->rememberToken();
         //     $table->timestamps();
         // });
+        // DB::table('users')->insert([
+        //     'name'=>'ipin',
+        //     'telepon' =>'085234123255',
+        //     'password'=>'1234567890'
+        // ]);
         DB::table('users')->insert([
-            'name'=>'ipin',
-            'telepon' =>'085234123255',
-            'password'=>'1234567890'
+            'name'=>'admin',
+            'telepon' =>'0812345678901',
+            'password' => Hash::make('passwordadmin'),
         ]);
 
         // DB::table('users')->insert([
