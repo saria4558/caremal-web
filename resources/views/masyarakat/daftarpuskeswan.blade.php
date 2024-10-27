@@ -9,7 +9,7 @@
       </div>
       <div class="navbar-right">
         <img src="{{ asset('assets/img/hero-bg.jpg') }}" alt="profil" class="profil">
-          <span class="user-greeting">Hi, Prabowo Sub</span>
+          <span class="user-greeting">Hi, {{ session('masy_nama') }}</span>
           <a href="#" class="language-switch">EN</a>
       </div>
   </nav>

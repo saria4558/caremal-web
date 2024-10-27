@@ -11,7 +11,6 @@ use App\Http\Controllers\DokterController;
 use App\Http\Controllers\MasyarakatController;
 
 
-
 //artikel and landig page
 Route::get('/', function () {
     return view('landing');
@@ -38,7 +37,7 @@ Route::post('/register/complete', [RegisterController::class, 'handleSecondForm'
 
 // Route login
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/login-proses', [LoginController::class, 'login_proses'])->name('login-proses');
+Route::post('/login-proses', [LoginController::class, 'login_proses'])->name('login-proses')->middleware('web');;
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
 
@@ -57,6 +56,7 @@ Route::get('/admin/daftardoktor', [CaremalController::class, 'dokter'] )->name('
 Route::get('/admin/daftarkontak', [CaremalController::class, 'shelter'] )->name('event');
 Route::get('/tambah', [CaremalController::class, 'tambah'] )->name('tambah');
 Route::post('/insert', [CaremalController::class, 'insert'] )->name('insert');
+Route::post('/insertArtikel', [ArtikelController::class, 'insertArtikel'] )->name('insertArtikel');
 Route::post('/insertkontak', [CaremalController::class, 'insertkontak'] )->name('insertkontak');
 Route::get('/deletedata/{id}', [CaremalController::class, 'deletedata'] )->name('deletedata');
 Route::get('/deletedatakontak/{id}', [CaremalController::class, 'deletedatakontak'] )->name('deletedatakontak');

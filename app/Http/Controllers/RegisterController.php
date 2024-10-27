@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Masyarakat;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller; // Tambahkan ini agar Controller dikenali
+use App\Models\tb_dokter;
 
 class RegisterController extends Controller
 {
@@ -56,7 +57,7 @@ class RegisterController extends Controller
         // Cek apakah input NIP diisi
         if ($registrationData['nip'] != null) {
             // Simpan data ke database
-                Masyarakat::create([
+                tb_dokter::create([
                     'masy_NIK' => $registrationData['nip'],
                     'masy_nama' => $registrationData['masy_nama'],
                     'masy_JK' => $registrationData['masy_JK'],

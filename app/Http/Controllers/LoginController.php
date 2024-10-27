@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Masyarakat;
-use App\Models\User;
+use App\Models\tb_Admin;
+use App\Models\tb_dokter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -18,20 +19,38 @@ class LoginController extends Controller
     public function login_proses(Request $request)
     {
         $request->validate([
-            'masy_Telepon' => 'required',
+            'masy_Telepon' => 'required|string',
             'masy_password' => 'required|string',
         ]);
 
-        
-        // Cek apakah user ada di database
-        $user = Masyarakat::where('masy_Telepon', $request->masy_Telepon)->first();
-        if ($user && Hash::check($request->masy_password, $user->masy_password)) {
-            Auth::login($user);
-            return redirect()->to('/admin/daftarkontak')->with('success', 'Login berhasil!');
-        } 
-       
+        $telepon = $request->input('masy_Telepon');
+        $password = $request->input('masy_password');
 
-        return back()->withErrors(['masy_username' => 'Username atau password salah'])->withInput();
+        // Cek di tabel Admin
+        $user = tb_Admin::where('admin_telepon', $telepon)->first();
+        if ($user && Hash::check($password, $user->admin_password)) {
+            Auth::login($user);
+            $request->session()->put('admin_nama', $user->admin_nama);
+            return redirect()->to('/admin/artikel')->with('success', 'Login berhasil sebagai Admin!');
+        }
+
+        // Cek di tabel Dokter
+        $user = tb_dokter::where('telepon', $telepon)->first();
+        if ($user && Hash::check($password, $user->password)) {
+            Auth::login($user);
+            $request->session()->put('dokter_nama', $user->dokter_nama); 
+            return redirect()->to('/dokter/home')->with('success', 'Login berhasil sebagai Dokter!');
+        }
+
+        // Cek di tabel Masyarakat
+        $user = Masyarakat::where('masy_Telepon', $telepon)->first();
+        if ($user && Hash::check($password, $user->masy_password)) {
+            Auth::login($user);
+            $request->session()->put('masy_nama', $user->masy_nama);
+            return redirect()->to('/masyarakat/artikel')->with('success', 'Login berhasil sebagai Masyarakat!');
+        }
+
+        return back()->withErrors(['masy_username' => 'Telepon atau password salah'])->withInput();
     }
 
     public function logout(Request $request)

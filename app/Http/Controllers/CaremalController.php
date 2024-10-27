@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Caremal;
 use App\Models\Kontak;
 use App\Models\shelter;
+use App\Models\tb_dokter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
@@ -27,12 +28,12 @@ class CaremalController extends Controller
         // return 'sukses';
     }
     public function tambah(){
-        $data = caremal::all();
+        $data = tb_dokter::all();
         return view('admin/tambahdoktor', compact('data'));
     }
     //
     public function insert(Request $request){
-        Caremal::create($request->all());
+        tb_dokter::create($request->all());
         return redirect()->to('admin/daftardoktor');
     }
     public function insertKontak(Request $request){
@@ -41,7 +42,7 @@ class CaremalController extends Controller
     }
 
     public function updatedata(Request $request, $id){
-        $data = Caremal::find($id);
+        $data = tb_dokter::find($id);
         if (!$data) {
             return redirect()->back()->with('error', 'Data tidak ditemukan');
         }
@@ -51,7 +52,7 @@ class CaremalController extends Controller
 
     public function tampilkandata($id)
         {
-            $data = Caremal::find($id);
+            $data = tb_dokter::find($id);
             return view('admin/editDoktorModal', compact('data'));
         }
 
@@ -59,7 +60,7 @@ class CaremalController extends Controller
 
     public function deletedata($id)
     {
-        $data = Caremal::find($id);
+        $data = tb_dokter::find($id);
         $data->delete();
         return redirect()->to('admin/daftardoktor');   
     }

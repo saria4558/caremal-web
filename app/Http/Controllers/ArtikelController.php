@@ -19,6 +19,10 @@ class ArtikelController extends Controller
     public function tambah(){
         return view('admin/artikel');
     }
+    public function insertArtikel(Request $request){
+        ArtikelPublic::create($request->all());
+        return redirect()->to('admin/daftarartikel');
+    }
 
 }
 
