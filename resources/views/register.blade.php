@@ -123,10 +123,18 @@
         document.getElementById('toggle-employee').addEventListener('click', function() {
             var nipField = document.getElementById('nip-field');
             var nipField = document.getElementById('alamat-field');
+            var toggleButton = document.getElementById('toggle-employee');
+
             if (nipField.classList.contains('hidden')) {
                 nipField.classList.remove('hidden');
             } else {
                 nipField.classList.add('hidden');
+            }
+            
+            if (!nipField.classList.contains('hidden')) {
+                toggleButton.textContent = 'Saya Bukan Dokter';
+            } else {
+                toggleButton.textContent = 'Daftar Sebagai Dokter';
             }
         });
 
