@@ -58,15 +58,16 @@ class RegisterController extends Controller
         if ($registrationData['nip'] != null) {
             // Simpan data ke database
                 tb_dokter::create([
-                    'masy_NIK' => $registrationData['nip'],
-                    'masy_nama' => $registrationData['masy_nama'],
-                    'masy_JK' => $registrationData['masy_JK'],
-                    'masy_Ttl' => $registrationData['masy_Ttl'],
-                    'masy_email' => $registrationData['masy_email'],
-                    'masy_Telepon' => $registrationData['masy_Telepon'],
-                    'masy_username' => $request->masy_username,
-                    'masy_password' => Hash::make($request->masy_password),
-                    'masy_kPassword' => Hash::make($request->masy_password_confirmation),
+                    'dokter_NIK' => $registrationData['nip'],
+                    'dokter_nama' => $registrationData['masy_nama'],
+                    'dokter_JK' => $registrationData['masy_JK'],
+                    'dokter_Ttl' => $registrationData['masy_Ttl'],
+                    'email' => $registrationData['masy_email'],
+                    'telepon' => $registrationData['masy_Telepon'],
+                    'alamat' => $registrationData['alamat'],
+                    'username' => $request->masy_username,
+                    'password' => Hash::make($request->masy_password),
+                    'kPassword' => Hash::make($request->password_confirmation),
                 ]);
 
                 // Hapus data dari session setelah selesai registrasi

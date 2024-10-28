@@ -101,9 +101,12 @@
                 <input type="text" name="masy_Telepon" class="form-control" placeholder="Nomor telepon" required>
             </div>
 
-            <!-- Input Nomor Induk Pegawai yang awalnya disembunyikan -->
+            <!-- Input Nomor Induk Pegawai dan alamat yang awalnya disembunyikan -->
             <div class="form-group hidden" id="nip-field">
                 <input type="text" name="nip" class="form-control" placeholder="Nomor Induk Pegawai">
+            </div>
+            <div class="form-group hidden" id="alamat-field">
+                <input type="text" name="alamat" class="form-control" placeholder="Kota tempat tinggal">
             </div>
 
             <button type="submit" class="btn btn-primary" id="next-button">Lanjut</button>
@@ -119,6 +122,7 @@
         // Script to toggle the Nomor Induk Pegawai field
         document.getElementById('toggle-employee').addEventListener('click', function() {
             var nipField = document.getElementById('nip-field');
+            var nipField = document.getElementById('alamat-field');
             if (nipField.classList.contains('hidden')) {
                 nipField.classList.remove('hidden');
             } else {
