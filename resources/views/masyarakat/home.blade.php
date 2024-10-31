@@ -92,64 +92,6 @@
     padding: 20px;
 }
 
-
-/* Memastikan title di tengah secara vertikal dan horizontal */
-.main-title {
-    position: absolute;
-                width: 416px;
-                height: 108px;
-                left: 500px;
-                top: 105px;
-                font-weight: bold;
-                font-family: 'Montserrat';
-                font-style: normal;
-                font-weight: 700;
-                font-size: 88.9412px;
-                line-height: 108px;
-                
-                background-clip: text;
-                text-fill-color: transparent;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 88.9412px;
-    line-height: 108px;
-    background: linear-gradient(90deg, #1CE7BC 0%, #7EBEF1 50%, #5586ED 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 10px; /* Beri sedikit jarak dengan rectangle */
-}
-
-
-/* Rectangle yang berada di bawah judul */
-.rectangle-a {
-
-    width: 200px;
-    height: 28px;
-    background: rgba(126, 190, 241, 0.5);
-    margin: 0 auto;
-    left: 370px; /* Untuk membuatnya di tengah */
-                top: 170px; /* Mengatur jarak vertikal di bawah teks */
-                transform: translateX(-50%); /* Menyelaraskan secara horizontal ke tengah */
-                background: rgba(126, 190, 241, 0.5);
-                z-index: 1; /* Dibawah teks */
-}
-
-/* Subtitle di bawah rectangle */
-.subtitle {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 65px;
-    color: rgba(6, 17, 19, 0.9);
-    margin-top: 20px;
-}
-
-/* Tombol CTA untuk darurat */
-.cta-button {
-    margin-top: 20px;
-}
-
-
 </style>
 <nav class="navbar">
     <div class="navbar-left">
@@ -186,18 +128,5 @@
             
         </ul>
     </nav>
-    <header id="header" class="header">
-        <div class="header-container">
-            <h1 class="main-title">CaremaL</h1>
-            <div class="rectangle-a"></div>
-            <div class="subtitle">
-                Nam sollicitud nunc, cursus eros vulputate sed. Vestibulum lobortis.
-            </div>
-            <div class="cta-button">
-                <a href="#" class="cta-btn">KONTAK DARURAT</a>
-                <img class="call_darurat" src="assets/img/call darurat.png" alt="..." />
-            </div>
-        </div>
-    </header>
     
 </header>
