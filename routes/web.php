@@ -37,7 +37,7 @@ Route::post('/register/complete', [RegisterController::class, 'handleSecondForm'
 
 // Route login
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/login-proses', [LoginController::class, 'login_proses'])->name('login-proses')->middleware('web');;
+Route::post('/login-proses', [LoginController::class, 'login_proses'])->name('login-proses')->middleware('web');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
 
@@ -63,6 +63,15 @@ Route::get('/deletedatakontak/{id}', [CaremalController::class, 'deletedatakonta
 Route::put('/updatedata/{id}', [CaremalController::class, 'updatedata'])->name('updatedata');
 Route::get('/tampilkandata/{id}', [CaremalController::class, 'tampilkandata'])->name('tampilkandata');
 Route::get('/admin/artikel', [ArtikelController::class, 'tambah'])->name('tambah');
+Route::get('/admin/daftarartikel', [ArtikelController::class, 'daftarArtikel'])->name('daftarArtikel');
+Route::get('/admin/editArtikel', [ArtikelController::class, 'editArtikel'])->name('editArtikel');
+Route::put('/admin/updateArtikel', [ArtikelController::class, 'updateArtikel'])->name('updateArtikel');
+Route::delete('/admin/deleteArtikel', [ArtikelController::class, 'deleteArtikel'])->name('deleteArtikel');
+Route::get('/admin/artikel', [ArtikelController::class, 'tambah'])->name('tambahArtikel');
+Route::post('/admin/artikel', [ArtikelController::class, 'insertArtikel'])->name('insertArtikel');
+
+
+
 
 
 // Dokter

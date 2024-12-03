@@ -91,9 +91,9 @@
     <i class="header-toggle d-xl-none bi bi-list"></i>
     <nav id="navmenu" class="navmenu">
         <ul>
-            <li><a href="#artikel"><i class="bi bi-newspaper"></i><span>Artikel</span></a></li>
+            <li><a href="/admin/daftarartikel" class="active"><i class="bi bi-newspaper"></i><span>Artikel</span></a></li>
             <li><a href="/admin/daftarkontak"><i class="bi bi-telephone"></i><span>Kontak Darurat</span></a></li>
-            <li><a href="/admin/daftardoktor" class="active"><i class="fa fa-user-md"></i><span>Doktor Hewan</span></a></li>
+            <li><a href="/admin/daftardoktor"><i class="fa fa-user-md"></i><span>Doktor Hewan</span></a></li>
             <li><a href="/admin/daftarpuskeswan"><i class="bi bi-hospital"></i><span>Puskeswan</span></a></li>
         </ul>
     </nav>

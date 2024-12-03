@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('artikel_status');
             $table->timestamps();
         });
+        
     }
 
     /**
